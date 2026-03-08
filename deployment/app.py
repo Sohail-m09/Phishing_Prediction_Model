@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import pickle
 
-st.title("🔐 Phishing Website Detection")
+st.title("Phishing Website Detection")
 
 st.write("Upload a CSV file containing website feature values to check if the site is Legitimate or Phishing.")
 
@@ -33,9 +33,9 @@ if uploaded_file is not None:
     prediction = model.predict(input_pca)
 
     if prediction[0] == 1:
-        st.error("⚠️ Phishing Website Detected")
+        st.error("Phishing Website Detected")
     else:
-        st.success("✅ Legitimate Website")
+        st.success("Legitimate Website")
 
     # Preprocess
     data_preprocessed = preprocessor.transform(input_df)
